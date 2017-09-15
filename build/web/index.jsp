@@ -4,7 +4,8 @@
     Author     : deocr
 --%>
 
-<%@page import="uts.wsd.User"%>
+<%@page import="uts.wsd.Student"%>
+<%@page import="uts.wsd.Tutor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
             <tr><td><h2>Welcome to UTSTutor! Please login or register to head on to the main page!</h2></td></tr>
         <tr style="background-color:grey"><td align="right"><p align="right"></p></td></tr>
         <tr><td align="right"><a href="login.jsp">Login</a> |
-                              <a href="register.jsp">Register</a></td></tr>
+                              <a href="registration.jsp">Register</a></td></tr>
         </table>
         </div>
         

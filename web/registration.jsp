@@ -18,11 +18,12 @@
                 <tr><td>Full Name:</td><td><input type="text" name="name"></td></tr>
                 <tr><td>Email:</td><td><input type="text" name="email"></td></tr>
                 <tr><td>Password:</td><td><input type="password" name="password"></td></tr>
-                <tr><td>Date of Birth :</td><td><input type="text" name="dob"></td></tr>
+                <tr><td>Date of Birth :</td><td><input type="date" name="dob" placeholder="dd/mm/yyyy"></td></tr>
                 <tr><td>I am a: </td>   <td><select name="user_type" id="user_type" onchange="showSubjects();">
                             <option value="student">Student</option>
                             <option value="tutor">Tutor</option></select></td></tr>
                 <tr id="specialty" style="display: none"><td>Subject Specialty:</td> <td><select name="specialty">
+                            <option value=0 selected="selected">Choose...</option>
                             <option value="wsd">WSD</option>
                             <option value="usp">USP</option>
                             <option value="sep">SEP</option>
