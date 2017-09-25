@@ -15,14 +15,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
 
+<% String filePath = application.getRealPath("WEB-INF/Students.xml");%>
+<jsp:useBean id="studentApp" class="uts.wsd.StudentApplication" scope="application">
+    <jsp:setProperty name="studentApp" property="filePath" value="<%=filePath%>"/>
+</jsp:useBean>
 
+<% String filePath2 = application.getRealPath("WEB-INF/Tutors.xml");%>
+<jsp:useBean id="tutorApp" class="uts.wsd.TutorApplication" scope="application">
+    <jsp:setProperty name="tutorApp" property="filePath" value="<%=filePath2%>"/>
+</jsp:useBean>
     </head>
     <body>
         
-        <% String filePath = application.getRealPath("WEB-INF/Students.xml");%>
-        <jsp:useBean id="studentApp" class="uts.wsd.StudentApplication" scope="application">
-            <jsp:setProperty name="studentApp" property="filePath" value="<%=filePath%>"/>
-        </jsp:useBean>
         <%
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -31,29 +35,21 @@
 
                 if (student != null) {
                 session.setAttribute("student", student);
-                response.sendRedirect("studentmain.jsp");
+                response.sendRedirect("main.jsp");
               
                 
-                } else { %>
-                
-        <% filePath = application.getRealPath("WEB-INF/Tutors.xml");%>
-        <jsp:useBean id="tutorApp" class="uts.wsd.TutorApplication" scope="application">
-            <jsp:setProperty name="tutorApp" property="filePath" value="<%=filePath%>"/>
-        </jsp:useBean>
-        <%
-            email = request.getParameter("email");
-            password = request.getParameter("password");
+                } else {
+                    
             Tutors tutors = tutorApp.getTutors();
             Tutor tutor = tutors.login(email, password);
 
                 if (tutor != null) {
                 session.setAttribute("tutor", tutor);
-                response.sendRedirect("tutormain.jsp");
+                response.sendRedirect("main.jsp");
               
-        %>
-                <% } else { %>
+                } else { %>
                 <p>Username or Password was incorrect, <a href="login.jsp">Try again.</a></p>
-                <% } %>
+                <% } } %>
         
 
     </body>

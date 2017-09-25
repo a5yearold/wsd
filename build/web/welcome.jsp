@@ -29,45 +29,45 @@
 
     <body>
 <% String filePath = application.getRealPath("WEB-INF/Students.xml");%>
-    
 <jsp:useBean id="studentApp" class="uts.wsd.StudentApplication" scope="application">
 <jsp:setProperty name="studentApp" property="filePath" value="<%=filePath%>"/>
 </jsp:useBean>
 <%Students students = studentApp.getStudents();%>
+
+<% String filePath2 = application.getRealPath("WEB-INF/Tutors.xml");%>
+
+<jsp:useBean id="tutorApp" class="uts.wsd.TutorApplication" scope="application">
+<jsp:setProperty name="tutorApp" property="filePath" value="<%=filePath2%>"/>
+</jsp:useBean>
+<%Tutors tutors = tutorApp.getTutors();%>
     
 <% 
-    if (type.equals("student")) {
-        if(students.getStudent(email) == null) {
+    if (students.getStudent(email) == null && tutors.getTutor(email) == null) {
+        if(type.equals("student")) {
             Student student = new Student(name, email, password, dob);
             session.setAttribute("student", student);
+            session.setAttribute("type", type);
             students.addStudent(student);
             studentApp.updateXML(students, filePath);
             //StudentsPrinter.html.print(filepath,out);
-            response.sendRedirect("studentmain.jsp");
+            response.sendRedirect("main.jsp");
         }
-    } else {
-%>
-<% filePath = application.getRealPath("WEB-INF/Tutors.xml"); %>
-
-<jsp:useBean id="tutorApp" class="uts.wsd.TutorApplication" scope="application">
-<jsp:setProperty name="tutorApp" property="filePath" value="<%=filePath%>"/>
-</jsp:useBean>
-<%Tutors tutors = tutorApp.getTutors();%>
-
-<% 
-        if (tutors.getTutor(email) == null) {
+        
+        else {
             Tutor tutor = new Tutor(name, email, password, dob, subject);
             session.setAttribute("tutor", tutor);
+            session.setAttribute("type", type);
             tutors.addTutor(tutor);
-            tutorApp.updateXML(tutors, filePath);
+            tutorApp.updateXML(tutors, filePath2);
             //TutorsPrinter.html.print(filepath, out);
-            response.sendRedirect("tutormain.jsp");
-        } else {
+            response.sendRedirect("main.jsp");
+        }
+    } else {
+    
 %>
 <p>Sorry, email is already in use, please <a href="registration.jsp">try again.</a></p>
 <%
-        }
-    } 
+        } 
 %>
 </body>
 
