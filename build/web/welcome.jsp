@@ -28,16 +28,16 @@
 %>
 
     <body>
-<% String filePath = application.getRealPath("WEB-INF/Students.xml");%>
+<% String studentPath = application.getRealPath("WEB-INF/Students.xml");%>
 <jsp:useBean id="studentApp" class="uts.wsd.StudentApplication" scope="application">
-<jsp:setProperty name="studentApp" property="filePath" value="<%=filePath%>"/>
+<jsp:setProperty name="studentApp" property="filePath" value="<%=studentPath%>"/>
 </jsp:useBean>
 <%Students students = studentApp.getStudents();%>
 
-<% String filePath2 = application.getRealPath("WEB-INF/Tutors.xml");%>
+<% String tutorPath = application.getRealPath("WEB-INF/Tutors.xml");%>
 
 <jsp:useBean id="tutorApp" class="uts.wsd.TutorApplication" scope="application">
-<jsp:setProperty name="tutorApp" property="filePath" value="<%=filePath2%>"/>
+<jsp:setProperty name="tutorApp" property="filePath" value="<%=tutorPath%>"/>
 </jsp:useBean>
 <%Tutors tutors = tutorApp.getTutors();%>
     
@@ -46,9 +46,9 @@
         if(type.equals("student")) {
             Student student = new Student(name, email, password, dob);
             session.setAttribute("student", student);
-            session.setAttribute("type", type);
+            //session.setAttribute("type", type);
             students.addStudent(student);
-            studentApp.updateXML(students, filePath);
+            studentApp.updateXML(students, studentPath);
             //StudentsPrinter.html.print(filepath,out);
             response.sendRedirect("main.jsp");
         }
@@ -56,9 +56,9 @@
         else {
             Tutor tutor = new Tutor(name, email, password, dob, subject);
             session.setAttribute("tutor", tutor);
-            session.setAttribute("type", type);
+            //session.setAttribute("type", type);
             tutors.addTutor(tutor);
-            tutorApp.updateXML(tutors, filePath2);
+            tutorApp.updateXML(tutors, tutorPath);
             //TutorsPrinter.html.print(filepath, out);
             response.sendRedirect("main.jsp");
         }

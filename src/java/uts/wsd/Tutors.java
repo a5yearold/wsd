@@ -31,7 +31,7 @@ public class Tutors implements Serializable {
     
     public Tutor getTutor(String email) {
         for (Tutor tutor : list) {
-            if (tutor.getEmail() == email) {
+            if (tutor.getEmail().equals(email)) {
                 return tutor;
             }
         }

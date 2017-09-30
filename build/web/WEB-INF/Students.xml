@@ -1,33 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<students>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students
+  xmlns="http://www.uts.edu.au/31284/wsd-student"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-student student.xsd">
     <student>
         <name>dong kyun</name>
         <email>dongkyun@woo.com</email>
         <password>applesauce</password>
         <dob>13/11/1888</dob>
     </student>
-    <student>
-        <name>james macomber</name>
-        <email>asdasdasd</email>
-        <password>asdasdsadads</password>
-        <dob>0010-05-03</dob>
-    </student>
-    <student>
-        <name>james macomber</name>
-        <email>12313123123</email>
-        <password>12312313213</password>
-        <dob>0323-02-03</dob>
-    </student>
-    <student>
-        <name>james macomber</name>
-        <email>james@macomber.com</email>
-        <password>sadasdasd</password>
-        <dob>31313-12-13</dob>
-    </student>
-    <student>
-        <name>james macomber</name>
-        <email>james@macomber.com</email>
-        <password>asdasdasd</password>
-        <dob>1313-12-13</dob>
-    </student>
+    
 </students>

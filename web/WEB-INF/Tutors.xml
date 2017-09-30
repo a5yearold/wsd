@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<tutors>
+<tutors
+  xmlns="http://www.uts.edu.au/31284/wsd-tutor"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-tutor tutor.xsd">
     <tutor>
         <name>bob marley</name>
         <email>bob@marley.com</email>
         <password>123456</password>
         <dob>06/07/1925</dob>
         <specialty>AppProg</specialty>
+        <status>Available</status>
     </tutor>
 </tutors>

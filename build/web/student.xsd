@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.uts.edu.au/31284/wsd-student"
+    xmlns="http://www.uts.edu.au/31284/wsd-student"
+    elementFormDefault="qualified">
+ 
+    <!-- Insert your type declarations here -->
+    <xs:simpleType name="dob">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,2}/\d{1,2}/\d{1,4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(([A-Z])[a-zA-Z]*)(\s(([A-Z])[a-zA-Z]*))*" />
+            <xs:whiteSpace value="preserve"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z(\.)_]+(@)[a-z\-]+(\.([a-z\-])+)+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="password">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="8"></xs:minLength>
+            <xs:pattern value="[a-zA-Z0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Insert your element declarations here -->
+    <xs:element name="students">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="student">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="name"/>
+                            <xs:element name="email" type="email"/>
+                            <xs:element name="password" type="password"/>
+                            <xs:element name="dob" type="dob"/>
+                        </xs:sequence>
+                    </xs:complexType>
+              
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+ 

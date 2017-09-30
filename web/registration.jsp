@@ -24,11 +24,11 @@
                             <option value="tutor">Tutor</option></select></td></tr>
                 <tr id="specialty" style="display: none"><td>Subject Specialty:</td> <td><select name="specialty">
                             <option value=0 selected="selected">Choose...</option>
-                            <option value="wsd">WSD</option>
-                            <option value="usp">USP</option>
-                            <option value="sep">SEP</option>
-                            <option value="app_prog">AppProg</option>
-                            <option value="mobile_app">MobileApp</option></select></td></tr>
+                            <option value="WSD">WSD</option>
+                            <option value="USP">USP</option>
+                            <option value="SEP">SEP</option>
+                            <option value="AppProg">AppProg</option>
+                            <option value="MobileApp">MobileApp</option></select></td></tr>
                 <tr><td></td><td><input type="submit" value="Register"></td></tr>
             </table>            
         </form>

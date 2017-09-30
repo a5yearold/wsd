@@ -1,66 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tutors>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tutors
+  xmlns="http://www.uts.edu.au/31284/wsd-tutor"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-tutor tutor.xsd">
     <tutor>
         <name>bob marley</name>
         <email>bob@marley.com</email>
         <password>123456</password>
         <dob>06/07/1925</dob>
         <specialty>AppProg</specialty>
-    </tutor>
-    <tutor>
-        <name>james </name>
-        <email>james</email>
-        <password>123213123</password>
-        <dob>0003-03-03</dob>
-        <specialty>wsd</specialty>
-    </tutor>
-    <tutor>
-        <name>asdad</name>
-        <email>asdadasd</email>
-        <password>asdasdasd</password>
-        <dob>0013-12-13</dob>
-        <specialty>usp</specialty>
-    </tutor>
-    <tutor>
-        <name>james macomber</name>
-        <email>james</email>
-        <password>123456</password>
-        <dob>0013-12-13</dob>
-        <specialty>wsd</specialty>
-    </tutor>
-    <tutor>
-        <name>james macomber</name>
-        <email>james</email>
-        <password>12313213</password>
-        <dob>0013-12-13</dob>
-        <specialty>usp</specialty>
-    </tutor>
-    <tutor>
-        <name>asdasda</name>
-        <email>asdasdasd</email>
-        <password>123123213</password>
-        <dob>0131-12-13</dob>
-        <specialty>usp</specialty>
-    </tutor>
-    <tutor>
-        <name>james macbomer</name>
-        <email>asdadsasd</email>
-        <password>asdasdasd</password>
-        <dob>1313-12-13</dob>
-        <specialty>wsd</specialty>
-    </tutor>
-    <tutor>
-        <name>james macomber</name>
-        <email>james@macomber.com</email>
-        <password>12312313123</password>
-        <dob>31313-12-13</dob>
-        <specialty>usp</specialty>
-    </tutor>
-    <tutor>
-        <name>james macomber</name>
-        <email>james@macomber.com</email>
-        <password>asdadasd</password>
-        <dob>1313-12-13</dob>
-        <specialty>wsd</specialty>
+        <status>Available</status>
     </tutor>
 </tutors>

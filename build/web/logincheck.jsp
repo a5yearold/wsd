@@ -33,6 +33,7 @@
             Students students = studentApp.getStudents();
             Student student = students.login(email, password);
 
+
                 if (student != null) {
                 session.setAttribute("student", student);
                 response.sendRedirect("main.jsp");
@@ -42,6 +43,7 @@
                     
             Tutors tutors = tutorApp.getTutors();
             Tutor tutor = tutors.login(email, password);
+
 
                 if (tutor != null) {
                 session.setAttribute("tutor", tutor);

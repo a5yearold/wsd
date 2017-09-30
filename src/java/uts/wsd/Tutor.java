@@ -26,13 +26,16 @@ public class Tutor implements Serializable {
     private String dob;
     @XmlElement(name = "specialty")
     private String specialty;
+    @XmlElement(name = "status")
+    private String status;
     
-    public Tutor(String name, String email, String password, String dob, String specialty) {
+    public Tutor(String name, String email, String password, String dob, String specialty, String status) {
      this.name = name;
      this.email = email;
      this.password = password;
      this.dob = dob;
      this.specialty = specialty;
+     this.status = status;
     }
     public Tutor() {
         
@@ -71,6 +74,13 @@ public class Tutor implements Serializable {
     }
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
+    }
+    
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 }

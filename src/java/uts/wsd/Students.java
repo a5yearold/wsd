@@ -31,7 +31,7 @@ public class Students implements Serializable {
     
     public Student getStudent(String email) {
         for (Student student : list) {
-            if (student.getEmail() == email) {
+            if (student.getEmail().equals(email)) {
                 return student;
             }
         }

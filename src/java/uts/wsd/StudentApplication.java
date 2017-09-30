@@ -20,18 +20,18 @@ import javax.xml.bind.Unmarshaller;
  */
 
 public class StudentApplication {
-    private String filePath;
+    private String studentPath;
     private Students students;
 
     public StudentApplication() {
     }
 
     public String getFilePath() {
-        return filePath;
+        return studentPath;
     }
 
-    public void setFilePath(String filePath) throws JAXBException, FileNotFoundException, IOException {
-        this.filePath = filePath;
+    public void setFilePath(String studentPath) throws JAXBException, FileNotFoundException, IOException {
+        this.studentPath = studentPath;
      
 
         // Create the unmarshaller
@@ -39,19 +39,19 @@ public class StudentApplication {
         Unmarshaller u = jc.createUnmarshaller();
 
         // Now unmarshal the object from the file
-        FileInputStream fin = new FileInputStream(filePath);
+        FileInputStream fin = new FileInputStream(studentPath);
         students = (Students)u.unmarshal(fin); // This loads the "???" object
         fin.close();
         
     }
     
-    public void updateXML(Students students, String filePath) throws Exception {
+    public void updateXML(Students students, String studentPath) throws Exception {
         this.students = students;
-        this.filePath = filePath;
+        this.studentPath = studentPath;
         JAXBContext jc = JAXBContext.newInstance(Students.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        FileOutputStream fout = new FileOutputStream(filePath);
+        FileOutputStream fout = new FileOutputStream(studentPath);
         m.marshal(students, fout);
         fout.close();
     }
